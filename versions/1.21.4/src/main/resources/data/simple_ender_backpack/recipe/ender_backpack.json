@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "minecraft:ender_chest",
+    "L": "minecraft:leather"
+  },
+  "pattern": [
+    "LLL",
+    "LEL",
+    "LLL"
+  ],
+  "result": {
+    "id": "simple_ender_backpack:ender_backpack",
+    "count": 1
+  }
+}

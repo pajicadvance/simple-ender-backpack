@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "simple_ender_backpack",
+  "version": "${version}",
+  "name": "Simple Ender Backpack",
+  "description": "Portable ender storage with Accessories support",
+  "authors": ["pajic"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.pajic.simpleenderbackpack.Main"
+    ],
+    "client": [
+      "me.pajic.simpleenderbackpack.ClientMain"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": [
+      "1.21.2",
+      "1.21.3"
+    ]
+  }
+}
