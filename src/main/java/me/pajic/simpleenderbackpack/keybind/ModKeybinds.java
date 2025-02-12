@@ -31,7 +31,6 @@ public class ModKeybinds {
                     ClientPlayNetworking.send(new ModNetworking.C2SOpenEnderContainerPayload());
                 }
                 else if (FabricLoader.getInstance().isModLoaded("accessories")) {
-                    client.player.playSound(SoundEvents.ENDER_CHEST_OPEN);
                     EnderBackpackAccessory.tryOpenEnderBackpackAccessory(client.player);
                 }
             }
