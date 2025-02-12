@@ -8,11 +8,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 //? if <= 1.21.1 {
-/*import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.item.ItemStack;
-*///?}
+//?}
 //? if > 1.21.1
-import net.minecraft.world.InteractionResult;
+/*import net.minecraft.world.InteractionResult;*/
 
 public class EnderBackpackItem extends Item {
     public EnderBackpackItem(Properties properties) {
@@ -21,9 +21,9 @@ public class EnderBackpackItem extends Item {
 
     @Override
     //? if <= 1.21.1
-    /*public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {*/
+    public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
     //? if > 1.21.1
-    public @NotNull InteractionResult use(Level level, @NotNull Player player, @NotNull InteractionHand hand) {
+    /*public @NotNull InteractionResult use(Level level, @NotNull Player player, @NotNull InteractionHand hand) {*/
         if (level.isClientSide()) {
             player.playSound(SoundEvents.ENDER_CHEST_OPEN);
         }
@@ -31,8 +31,8 @@ public class EnderBackpackItem extends Item {
             Util.openEnderBackpack(player);
         }
         //? if <= 1.21.1
-        /*return InteractionResultHolder.success(player.getItemInHand(usedHand));*/
+        return InteractionResultHolder.success(player.getItemInHand(usedHand));
         //? if > 1.21.1
-        return InteractionResult.SUCCESS;
+        /*return InteractionResult.SUCCESS;*/
     }
 }

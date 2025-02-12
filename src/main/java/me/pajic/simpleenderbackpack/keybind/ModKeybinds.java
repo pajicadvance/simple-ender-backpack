@@ -42,7 +42,6 @@ public class ModKeybinds {
                 PacketDistributor.sendToServer(new ModNetworking.C2SOpenEnderContainerPayload());
             }
             else if (ModList.get().isLoaded("accessories")) {
-                client.player.playSound(SoundEvents.ENDER_CHEST_OPEN);
                 EnderBackpackAccessory.tryOpenEnderBackpackAccessory(client.player);
             }
         }
