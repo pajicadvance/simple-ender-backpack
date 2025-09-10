@@ -3,7 +3,6 @@ package me.pajic.simpleenderbackpack;
 import me.pajic.simpleenderbackpack.accessories.EnderBackpackAccessory;
 import me.pajic.simpleenderbackpack.item.EnderBackpackItem;
 import me.pajic.simpleenderbackpack.network.ModNetworking;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
@@ -12,9 +11,9 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.RegisterEvent;
+import net.minecraft.core.registries.Registries;
 //? if > 1.21.1 {
-/*import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
+/*import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 *///?}
 

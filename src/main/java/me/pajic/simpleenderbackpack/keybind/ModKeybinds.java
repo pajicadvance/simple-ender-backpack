@@ -1,6 +1,7 @@
 package me.pajic.simpleenderbackpack.keybind;
 
 import com.mojang.blaze3d.platform.InputConstants;
+import me.pajic.simpleenderbackpack.Util;
 import me.pajic.simpleenderbackpack.accessories.EnderBackpackAccessory;
 import me.pajic.simpleenderbackpack.item.EnderBackpackItem;
 import me.pajic.simpleenderbackpack.network.ModNetworking;
@@ -14,7 +15,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.network.PacketDistributor;
 import org.lwjgl.glfw.GLFW;
 
 @EventBusSubscriber(modid = "simple_ender_backpack", value = Dist.CLIENT)
@@ -39,7 +39,7 @@ public class ModKeybinds {
         if (OPEN_ENDER_BACKPACK.get().consumeClick() && client.player != null && client.level != null) {
             if (client.player.getInventory().hasAnyMatching(itemStack -> itemStack.getItem() instanceof EnderBackpackItem)) {
                 client.player.playSound(SoundEvents.ENDER_CHEST_OPEN);
-                PacketDistributor.sendToServer(new ModNetworking.C2SOpenEnderContainerPayload());
+                Util.sendToServer(new ModNetworking.C2SOpenEnderContainerPayload());
             }
             else if (ModList.get().isLoaded("accessories")) {
                 EnderBackpackAccessory.tryOpenEnderBackpackAccessory(client.player);
