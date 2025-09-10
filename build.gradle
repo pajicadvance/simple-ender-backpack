@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.9-SNAPSHOT'
+    id 'fabric-loom' version '1.11-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -24,6 +24,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:${property("fabric_version")}"
+    modImplementation "io.wispforest:owo-lib:${property("owo_version")}"
     modImplementation "io.wispforest:accessories-fabric:${property("accessories_version")}"
 }
 

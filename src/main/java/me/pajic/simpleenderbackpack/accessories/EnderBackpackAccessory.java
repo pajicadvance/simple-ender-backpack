@@ -1,7 +1,6 @@
 package me.pajic.simpleenderbackpack.accessories;
 
 import io.wispforest.accessories.api.AccessoriesCapability;
-import io.wispforest.accessories.api.Accessory;
 import me.pajic.simpleenderbackpack.Main;
 import me.pajic.simpleenderbackpack.network.ModNetworking;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
@@ -10,8 +9,14 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Player;
 //? if <= 1.21.1
 import io.wispforest.accessories.api.AccessoriesAPI;
-//? if > 1.21.1
+//? if > 1.21.1 < 1.21.8
 /*import io.wispforest.accessories.api.AccessoryRegistry;*/
+//? if < 1.21.8
+import io.wispforest.accessories.api.Accessory;
+//? if >= 1.21.8 {
+/*import io.wispforest.accessories.api.core.Accessory;
+import io.wispforest.accessories.api.core.AccessoryRegistry;
+*///?}
 
 import java.util.Optional;
 
