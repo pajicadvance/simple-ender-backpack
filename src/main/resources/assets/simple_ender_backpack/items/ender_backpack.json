@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "simple_ender_backpack:item/ender_backpack"
+  }
+}

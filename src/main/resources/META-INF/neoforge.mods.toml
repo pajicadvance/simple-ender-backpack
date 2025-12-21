@@ -16,8 +16,4 @@ credits = "${contributors}"
 
 description = '''${description}'''
 
-[[mixins]]
-config = "${id}.mixins.json"
-[[accessTransformers]]
-file = "aw/${minecraft}.cfg"
 ${dependencies}

@@ -1,9 +1,6 @@
 plugins {
 	id("mod-platform")
 	id("net.neoforged.moddev")
-	id("dev.kikugie.fletching-table") version "0.1.0-alpha.22"
-	kotlin("jvm") version "2.2.10"
-	id("com.google.devtools.ksp") version "2.2.10-2.0.2"
 }
 
 platform {
@@ -14,10 +11,6 @@ platform {
 		}
 		required("neoforge") {
 			forgeVersionRange = "[1,)"
-		}
-		required("fzzy_config") {
-			slug("fzzy-config")
-			forgeVersionRange = "[0,)"
 		}
 	}
 }
@@ -35,16 +28,8 @@ stonecutter {
 	}
 }
 
-fletchingTable {
-	mixins.create("main") {
-		mixin("default", "${prop("mod.id")}.mixins.json")
-	}
-}
-
 neoForge {
 	version = property("deps.neoforge") as String
-	accessTransformers.from(rootProject.file("src/main/resources/aw/${stonecutter.current.version}.cfg"))
-	validateAccessTransformers = true
 
 	if (hasProperty("deps.parchment")) parchment {
 		val (mc, ver) = (property("deps.parchment") as String).split(':')
@@ -75,21 +60,12 @@ neoForge {
 
 repositories {
 	maven("https://maven.parchmentmc.org") { name = "ParchmentMC" }
-	maven("https://maven.fzzyhmstrs.me/") { name = "Fzzy Config" }
-	maven("https://thedarkcolour.github.io/KotlinForForge/") { name = "KotlinForForge" }
-	maven("https://jitpack.io") { name = "Jitpack" }
-	exclusiveContent {
-		forRepository { maven("https://api.modrinth.com/maven") { name = "Modrinth" } }
-		filter { includeGroup("maven.modrinth") }
-	}
+	maven("https://maven.wispforest.io/releases") { name = "Wisp Forest" }
+	maven("https://maven.su5ed.dev/releases") { name = "su5ed" }
 }
 
 dependencies {
-	implementation( "me.fzzyhmstrs:fzzy_config:${prop("deps.fzzy_config")}+neoforge")
-	implementation("com.moulberry:mixinconstraints:${prop("deps.mixinconstraints")}")
-	jarJar("com.moulberry:mixinconstraints:${prop("deps.mixinconstraints")}")
-	implementation("com.github.ramixin:mixson-neoforge:${prop("deps.mixson")}")
-	jarJar("com.github.ramixin:mixson-neoforge:${prop("deps.mixson")}")
+	compileOnly("io.wispforest:accessories-neoforge:${prop("deps.accessories")}")
 }
 
 tasks.named("createMinecraftArtifacts") {

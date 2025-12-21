@@ -21,7 +21,6 @@
   "icon": "icon.png",
   "license": "${license}",
   "environment": "*",
-  "accessWidener": "aw/${minecraft}.accesswidener",
   "entrypoints": {
     "main": [
       "${group}.${id}.platform.fabric.FabricEntrypoint"
@@ -29,8 +28,5 @@
     "client": [
       "${group}.${id}.platform.fabric.FabricClientEntrypoint"
     ]
-  },
-  "mixins": [
-    "${id}.mixins.json"
-  ],${dependencies}
+  },${dependencies}
 }
